@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+</head>
+
+<body>
+   <div class="container">
+      <div class="row">
+
+         <div class="col-lg-6">
+            <h1 class="text-center">MARKSHEET</h1>
+            <form action="">
+               <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" id="getname" placeholder="Enter your Name" class="form-control">
+               </div>
+               <div class="form-group">
+                  <label>My class</label>
+                  <input type="text" id="getmycls" placeholder="Enter your mcls" class="form-control">
+               </div>
+               <div class="form-group">
+                  <label>English</label>
+                  <input type="text" id="geteng" placeholder="Enter your subject marks" class="form-control">
+               </div>
+               <div class="form-group">
+                  <label>Math</label>
+                  <input type="text" id="getmth" placeholder="Enter your subject mrks" class="form-control">
+               </div>
+               <div class="form-group">
+                  <label>Physics</label>
+                  <input type="text" id="getphy" placeholder="Enter your subject marks" class="form-control">
+               </div>
+               <div class="form-group">
+                  <label>Chemistry</label>
+                  <input type="text" id="getchem" placeholder="Enter your subject marks" class="form-control">
+               </div>
+               <div class="form-group">
+                  <label>Biology</label>
+                  <input type="text" id="getbio" placeholder="Enter your subject marks" class="form-control">
+               </div>
+             
+
+            </form>
+            <div class="form check">
+               <label for="" class="form-check-label">Good</label>
+               <input type="checkbox" class="form-check-input">
+            </div>
+            <div class="form check">
+               <label for="" class="form-check-label">Average</label>
+               <input type="checkbox" class="form-check-input">
+            </div>
+            <div class="form check">
+               <label for="" class="form-check-label">Bad</label>
+               <input type="checkbox" class="form-check-input">
+            </div>
+
+
+
+            <button onclick="myform()" type="button">submit</button>
+            </form>
+         </div>
+         <div class=" col-lg-6">
+
+            <div class="div2">
+               <h3 id="setname"></h3>
+               <h3 id="setmycls"></h3>
+               <h3 id="seteng"></h3>
+               <h3 id="setmth"></h3>
+               <h3 id="setphy"></h3>
+               <h3 id="setchem"></h3>
+               <h3 id="setbio"></h3>
+               <h3 id="setom"></h3>
+               <h3 id="settm"></h3>
+               <h3 id="setper"></h3>
+               <h2 id="grd"></h2>
+            </div>
+         </div>
+      </div>
+   </div>
+   <script>
+      function myform() {
+         let Name = document.getElementById("getname").value;
+         document.getElementById("setname").innerHTML = "Name : " + Name;
+
+         let Mclass = document.getElementById("getmycls").value;
+         document.getElementById("setmycls").innerHTML = "Mclass : " + Mclass;
+
+         let English = document.getElementById("geteng").value;
+         document.getElementById("seteng").innerHTML = "English : " + English;
+
+         let Math = document.getElementById("getmth").value;
+         document.getElementById("setmth").innerHTML = "Math : " + Math;
+
+         let Physics = document.getElementById("getphy").value;
+         document.getElementById("setphy").innerHTML = "Physics : " + Physics;
+
+         let Chemistry = document.getElementById("getchem").value;
+         document.getElementById("setchem").innerHTML = "Chemistry: " + Chemistry;
+
+         let Biology = document.getElementById("getbio").value;
+         document.getElementById("setbio").innerHTML = "Biology : " + Biology;
+
+         let OM = parseInt(English) + parseInt(Math) + parseInt(Physics) + parseInt(Chemistry) + parseInt(Biology);
+         document.getElementById("setom").innerHTML = "Obtain marks : " + OM;
+
+         let TM = 500;
+
+         document.getElementById("settm").innerHTML = "Total Marks : " + TM;
+
+         let percentage = OM / TM * 100;
+         document.getElementById("setper").innerHTML = "Percentage : " + parseInt(percentage) + "%";
+
+         let grade = " ";
+         if (percentage >= 80) {
+            grade ="Grade:A1 <br>"
+         }
+
+         
+         else if (percentage >= 70) {
+            grade ="Grade:A <br>"
+         }
+
+         
+        else if (percentage >= 60) {
+            grade ="Grade:B <br>"
+         }
+
+         
+        else if (percentage >= 50) {
+            grade ="Grade:C <br>"
+         }
+         else  {
+            grade ="Grade:F <br>"
+         }
+        
+         document.getElementById("grd").innerHTML=grade;
+
+
+      }
+
+   </script>
+</body>
+
+</html>
